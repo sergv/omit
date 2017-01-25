@@ -19,10 +19,11 @@ build-type:
 cabal-version:
   >=1.10
 
-executable omit
-  main-is:
-    Main.hs
-  -- other-modules:
+library
+  exposed-modules:
+    Application.Git
+  hs-source-dirs:
+    src
   build-depends:
     Diff,
     Glob,
@@ -40,6 +41,21 @@ executable omit
     unix,
     utf8-string,
     zlib
+  default-language:
+    Haskell2010
+  ghc-options:
+    -Wall
+    -fwarn-monomorphism-restriction
+    -fno-warn-type-defaults
+
+-- -fno-warn-name-shadowing
+
+executable omit
+  main-is:
+    Main.hs
+  build-depends:
+    base,
+    omit
   hs-source-dirs:
     exe
   default-language:
