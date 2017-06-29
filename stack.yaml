@@ -1,4 +1,8 @@
-resolver: lts-5.15
+# resolver: lts-5.15
+# resolver: lts-6.27
+# resolver: nightly-2017-01-31
+resolver: lts-8.16
+
 packages:
 - '.'
 extra-deps: []
